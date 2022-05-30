@@ -36,8 +36,8 @@ public class Jun {
   static BufferedImage debtJunhyoungImage;
 
   public Jun () {
-    junhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jun.jpg");
-    debtJunhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jun_in_debt.jpg");
+    junhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_transparent.png");
+    debtJunhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_in_debt.png");
 
     junStartX = 100;
     junBaseY = Ground.GROUND_Y + 5;
@@ -143,9 +143,9 @@ public class Jun {
     else if (state == JUMPING && topPointReached) {
       jun.y = junTop + jumpFactor;
     }
-    /** If the character isn't jumping, the y-coor of the rectangle is the y-coor of the base of the character minus 27 */
+    /** If the character isn't jumping, the y-coor of the rectangle is the y-coor of the base of the character minus 41 */
     else if (state != JUMPING) {
-      jun.y = junBaseY - 27;
+      jun.y = junBaseY - 41;
     }
 
     jun.width = junhyoungImage.getWidth(); // rect's width is the width of the image
