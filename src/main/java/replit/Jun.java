@@ -173,4 +173,11 @@ public class Jun {
     topPointReached = false;
     state = JUMPING;
   }
+
+  public boolean isJump() {
+    if (state == JUMPING && (junTopY == junTop && !topPointReached)) {
+      return true;
+    }
+    return false;
+  }
 }

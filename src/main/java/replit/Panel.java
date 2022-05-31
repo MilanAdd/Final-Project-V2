@@ -4,8 +4,6 @@ import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
 
-import javafx.scene.canvas.GraphicsContext;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -14,6 +12,7 @@ import replit.Ground;
 import replit.Jun;
 import replit.EthereumCoinObstacles;
 import replit.utility.Resource;
+import replit.utility.AudioResource;
 
 class Panel extends JPanel implements KeyListener, Runnable {
   
@@ -107,9 +106,14 @@ class Panel extends JPanel implements KeyListener, Runnable {
     ground.update();
     obst.update();
 
+    if(jun.isJump()) {
+      new Thread(new AudioResource("src/main/java/replit/audio/jump.wav")).start();
+    }
+
     /** If a character collides with an obstacle (checked with hasHitObst() boolean method), the character goes into debt state, the game resets, and the panel repaints */
     if (obst.hasHitObst()) {
       jun.debt();
+      new Thread(new AudioResource("src/main/java/replit/audio/oh_no...anyway.wav")).start();
       reset();
       repaint();
       running = false;
