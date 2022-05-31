@@ -52,7 +52,7 @@ public class AudioResource implements Runnable {
     int nBytesRead = 0;
     byte[] abData = new byte[100000];
 
-    /** If bytes file is no -1 (meaning file exists), it can be read
+    /** If bytes file is not -1 (meaning file exists), it can be read
      * If bytes is less than or equal to 0, it can also be written
      * Catches any IOException
      * Regardless of exceptions, audio line is drained and closed
