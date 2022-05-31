@@ -34,19 +34,19 @@ public class Jun {
   static BufferedImage debtJunhyoungImage; // image of character when they're in debt
 
   public Jun () {
-    junhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_transparent.png"); // character image set to
-    debtJunhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_in_debt.png");
+    junhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_transparent.png"); // character image set to specified file path
+    debtJunhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_in_debt.png"); // debt character image set to specified file path
 
-    junStartX = 100;
-    junBaseY = Ground.GROUND_Y + 5;
-    junTopY = Ground.GROUND_Y - junhyoungImage.getHeight() + 5;
+    junStartX = 100; // initial x-coordinate for character is set to 100
+    junBaseY = Ground.GROUND_Y + 5; // y-coordinate of base of character is set to y-coordinate of ground plus 5
+    junTopY = Ground.GROUND_Y - junhyoungImage.getHeight() + 5; // y-coordinate of top of character is set to y-coordinate of ground minus the height of the character plus 5
 
-    junEndX = junStartX + junhyoungImage.getWidth();
-    initjunStartXCnt = 0;
-    initjunStartXCntMax = 75;
-    topPoint = junTopY - 120;
+    junEndX = junStartX + junhyoungImage.getWidth(); // end x-coordinate of character is starting x-coordinate plus width of character image
+    initjunStartXCnt = 0; // initial counter value for x-coordinate of character is 0
+    initjunStartXCntMax = 75; // max counter value for x-coordinate of character is 75
+    topPoint = junTopY - 120; // top point of character is y-coordinate of character minus 120
 
-    state = 1;
+    state = 1; // state value is initially set to 1
   }
 
   /** Returns starting position of character, used in Panel class */
