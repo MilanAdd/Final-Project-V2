@@ -12,18 +12,18 @@ import javax.imageio.ImageIO;
 public class Ground {
     /** Private class with image and x value */
     private class GroundImage {
-        BufferedImage image;
+        BufferedImage image; 
         int x;
     }
 
-    public static int GROUND_Y;
+    public static int GROUND_Y; // y-value of ground
 
-    private BufferedImage image;
+    private BufferedImage image; // BufferedImage object is image
 
-    private ArrayList<GroundImage> groundImageSet;
+    private ArrayList<GroundImage> groundImageSet; // arraylist of ground images
 
     public Ground (int panelHeight) {
-        GROUND_Y = (int)(panelHeight - 0.1 * panelHeight);
+        GROUND_Y = (int)(panelHeight - 0.1 * panelHeight); // y-value of ground is panel height minus 10% of the panel height
 
         /** Try and catch statement that detects if there is exception to Ground image */
         try {
@@ -32,7 +32,7 @@ public class Ground {
             e.printStackTrace();
         }
 
-        groundImageSet = new ArrayList<GroundImage>();
+        groundImageSet = new ArrayList<GroundImage>(); // arraylist of ground images is set to new GroundImage arraylist
 
         /** For loop that creates new GroundImage object, sets image of ground, x-pos of object, and adds object to ground image set arraylist
          * Loops and executes three times
