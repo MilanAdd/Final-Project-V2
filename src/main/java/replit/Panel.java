@@ -106,6 +106,7 @@ class Panel extends JPanel implements KeyListener, Runnable {
     ground.update();
     obst.update();
 
+    /** If the character is jumping, a sound effect is played */
     if(jun.isJump()) {
       new Thread(new AudioResource("src/main/java/replit/audio/jump.wav")).start();
     }

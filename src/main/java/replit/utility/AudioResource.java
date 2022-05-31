@@ -6,8 +6,9 @@ import java.io.IOException;
 
 public class AudioResource implements Runnable {
   private String fileName;
+  
   public AudioResource(String fileName){
-    this.fileName=fileName;
+    this.fileName = fileName;
   }
 
   /** Sets name for audio as a set file name or path
@@ -60,8 +61,9 @@ public class AudioResource implements Runnable {
     try {
       while (nBytesRead != -1) {
         nBytesRead = audioInputStream.read(abData, 0, abData.length);
-        if (nBytesRead >= 0)
+        if (nBytesRead >= 0) {
           audioLine.write(abData, 0, nBytesRead);
+        }
       }
     } catch (IOException e) {
       e.printStackTrace();
