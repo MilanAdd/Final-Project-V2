@@ -174,6 +174,9 @@ public class Jun {
     state = JUMPING;
   }
 
+  /** If character is jumping, then boolean returns true, false otherwise
+   * Used in panel class so that if character is jumping, audio can be played
+   */
   public boolean isJump() {
     if (state == JUMPING && (junTopY == junTop && !topPointReached)) {
       return true;
