@@ -10,33 +10,31 @@ import javafx.scene.paint.Color;
 import replit.utility.Resource;
 
 public class Jun {
-  private static int junBaseY; 
-  private static int junTopY;
-  private static int junStartX;
-  private static int junEndX;
-  private static int initjunStartXCnt;
-  private static int initjunStartXCntMax;
+  private static int junBaseY; // base of the character
+  private static int junTopY; // y-coordinate of top of character
+  private static int junStartX; // starting x-coordinate of character
+  private static int junEndX; // ending x-coordinate of character
+  private static int initjunStartXCnt; // counter of starting x-coordinate of character
+  private static int initjunStartXCntMax; // max value of counter of starting x-coordinate of character
   
-  private static int junTop;
-  private static int junBottom;
-  private static int topPoint;
+  private static int junBottom; // bottom of the character
+  private static int junTop; // top of character
+  private static int topPoint; // top point of character
 
-  private static boolean topPointReached;
-  private static int jumpFactor = 20;
+  private static boolean topPointReached; // boolean that states if top point is reached
+  private static int jumpFactor = 20; // jump factor of character, is set to 20
 
-  private static final int STAND_STILL = 1;
-  private static final int JUMPING = 2;
-  private static final int DEBT = 3;
+  private static final int STAND_STILL = 1; // value of stand still is 1, use as one of the cases
+  private static final int JUMPING = 2; // value of jumping is 2, use as one of the cases
+  private static final int DEBT = 3; // value of debt is 3, use as one of the cases
 
-  private static int state;
+  private static int state; // state of character, changes depending of what type of case character is at
 
-  private float speedX;
-
-  static BufferedImage junhyoungImage;
-  static BufferedImage debtJunhyoungImage;
+  static BufferedImage junhyoungImage; // image of character
+  static BufferedImage debtJunhyoungImage; // image of character when they're in debt
 
   public Jun () {
-    junhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_transparent.png");
+    junhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_transparent.png"); // character image set to
     debtJunhyoungImage = new Resource().getResourceImage("src/main/java/replit/images/jundan_in_debt.png");
 
     junStartX = 100;

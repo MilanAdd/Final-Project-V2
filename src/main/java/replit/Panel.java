@@ -16,37 +16,37 @@ import replit.utility.AudioResource;
 
 class Panel extends JPanel implements KeyListener, Runnable {
   
-  public static int WIDTH;
-  public static int HEIGHT;
-  private Thread animator;
+  public static int WIDTH; // Panel width
+  public static int HEIGHT; // Panel height
+  private Thread animator; // thread of execution of game
   
-  private boolean running = false;
-  private boolean gameOver = false;
+  private boolean running = false; // boolean that determines if game is running
+  private boolean gameOver = false; // boolean that determines if game is over
   
-  Ground ground;
-  Jun jun;
-  EthereumCoinObstacles obst;
-  BufferedImage nycImg;
+  Ground ground; // ground object
+  Jun jun; // character object
+  EthereumCoinObstacles obst; // obstacle object
+  BufferedImage nycImg; // image object
 
-  private int score;
-  private String gameDone;
-  private String startOverMessage;
+  private int score; // score that is displayed on screen
+  private String gameDone; // game over message
+  private String startOverMessage; // message that pops up after the game is over, states instructions
   
   public Panel () {
-    WIDTH = Main.WIDTH;
-    HEIGHT = Main.HEIGHT;
+    WIDTH = Main.WIDTH; // sets width as GUI/panel width
+    HEIGHT = Main.HEIGHT; // sets height as GUI/panel height
     
-    ground = new Ground(HEIGHT);
-    jun = new Jun();
-    obst = new EthereumCoinObstacles((int)(WIDTH * 1.5));
-    nycImg = new Resource().getResourceImage("src/main/java/replit/images/wall_street(1).jpg");
+    ground = new Ground(HEIGHT); // sets ground object as new ground object with height of panel
+    jun = new Jun(); // sets character object as new character object
+    obst = new EthereumCoinObstacles((int)(WIDTH * 1.5)); // sets obstacle object as new obstacle object with position of width of panel times 1.5
+    nycImg = new Resource().getResourceImage("src/main/java/replit/images/wall_street(1).jpg"); // sets image object as resource object that gets image from specified file path
 
-    score = 0;
-    gameDone = "Jun's in debt :(";
-    startOverMessage = "Press the spacebar to start a new game";
+    score = 0; // score is initially set as 0
+    gameDone = "Jun's in debt :("; // sets gameDone as specific game over message
+    startOverMessage = "Press the spacebar to start a new game"; // set as instructions when starting a new game after colliding with an obstacle
     
-    setSize(WIDTH, HEIGHT);
-    setVisible(true);
+    setSize(WIDTH, HEIGHT); // sets panel size as window width and height
+    setVisible(true); // frame becomes visible on screen
   }
   
   public void paint (Graphics g) {
