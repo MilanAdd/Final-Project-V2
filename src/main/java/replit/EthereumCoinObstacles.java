@@ -19,37 +19,37 @@ public class EthereumCoinObstacles {
 
         /** Creates rectangle around obstacle */
         Rectangle getObstacle () {
-            Rectangle obstacle = new Rectangle();
-            obstacle.x = x;
-            obstacle.y = y;
-            obstacle.width = image.getWidth();
-            obstacle.height = image.getHeight();
+            Rectangle obstacle = new Rectangle(); // new Rectangle object called obstacle
+            obstacle.x = x; // x-value of obstacle is x
+            obstacle.y = y; // y-value of obstacle is y
+            obstacle.width = image.getWidth(); // obstacle's width is obstacle image's width
+            obstacle.height = image.getHeight(); // obstacle's height is obstacle image's height
 
             return obstacle;
         }
     }
 
-    private int firstX;
-    private int obstacleInterval;
-    private int movementSpeed;
+    private int firstX; // x-value of first obstacle of arraylist
+    private int obstacleInterval; // interval in which obstacles appear
+    private int movementSpeed; // speed in which obstacle is moving
 
-    private ArrayList<BufferedImage> imgList;
-    private ArrayList<EthereumCoinObstacle> ethObstList;
+    private ArrayList<BufferedImage> imgList; // BufferedImage arraylist for obstacle images
+    private ArrayList<EthereumCoinObstacle> ethObstList; // arraylist for obstacle objects
 
-    private EthereumCoinObstacle blockedAt;
+    private EthereumCoinObstacle blockedAt; // obstacle object that is collided
 
     public EthereumCoinObstacles (int firstPos) {
-        ethObstList = new ArrayList<EthereumCoinObstacle>();
-        imgList = new ArrayList<BufferedImage>();
+        ethObstList = new ArrayList<EthereumCoinObstacle>(); // arraylist for obstacle objects is set as new EthereumCoinObstacle arraylist
+        imgList = new ArrayList<BufferedImage>(); // BufferedImage arraylist for obstacle images is set as new BufferedImage arraylist
 
-        firstX = firstPos;
-        obstacleInterval = 200;
-        movementSpeed = 17;
+        firstX = firstPos; // x-value of first obstacle object is first x-position
+        obstacleInterval = 200; // obstacle interval is set to 200
+        movementSpeed = 17; // obstacle speed is set to 17
 
-        imgList.add(new Resource().getResourceImage("src/main/java/replit/images/coin1.png"));
-        imgList.add(new Resource().getResourceImage("src/main/java/replit/images/coin2.png"));
+        imgList.add(new Resource().getResourceImage("src/main/java/replit/images/coin1.png")); // blue coin image is added to image list
+        imgList.add(new Resource().getResourceImage("src/main/java/replit/images/coin2.png")); // red coin image is added is image list
 
-        int x = firstX;
+        int x = firstX; // x is x-value of first obstacle object of arraylist
 
         /** Goes through imgList, creates new EthereumCoinObstacle object
          * Image of obstacle is whatever current object's image is
