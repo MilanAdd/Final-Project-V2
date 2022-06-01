@@ -70,7 +70,7 @@ class Panel extends JPanel implements KeyListener, Runnable {
     g.drawString(Integer.toString(score), getWidth()/2 - 63, 100);
     
     /** Creates a text when game is first being started, displays an introductory message plus instructions on how to start the game */
-    if (jun.getPos() == 100 && score == 0) {
+    if (jun.getPos() == 100 && score == 0 && getGameOverNum() == 0) {
       g.setFont(new Font("Gore Regular", Font.PLAIN, 32));
       g.setColor(Color.BLACK);
       g.drawString("Press the spacebar to start a journey on Wall Street", getWidth()/2 - 535, 250);
@@ -129,6 +129,15 @@ class Panel extends JPanel implements KeyListener, Runnable {
     System.out.println("reset");
     obst.resume();
     gameOver = false;
+  }
+
+  /** Counter that states how many times the game has ended by a collision */
+  public int getGameOverNum() {
+    int count = 0;
+    if (gameOver) {
+      count++;
+    }
+    return count;
   }
   
   /** Several if conditions when spacebar is being pressed (i.e. when the game ends due to a collision, when a new game starts, and when the character jumps due to spacebar being pressed) */
